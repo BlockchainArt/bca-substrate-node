@@ -1,0 +1,82 @@
+[package]
+edition = '2018'
+name = 'pallet-bca'
+version = '1.0.0'
+authors = ['Blockchain.art']
+license = 'Unlicense'
+description = ''
+repository = 'https://github.com/BlockchainArt/bca-substrate-node'
+
+[package.metadata.docs.rs]
+targets = ['x86_64-unknown-linux-gnu']
+
+[dependencies.codec]
+default-features = false
+features = ['derive']
+package = 'parity-scale-codec'
+version = '2.0.0'
+
+[dependencies.frame-benchmarking]
+default-features = false
+optional = true
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.frame-support]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.frame-system]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.pallet-uniques]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.serde]
+version = "1.0.126"
+optional = true
+features = ["derive"]
+
+[dependencies.sp-runtime]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.sp-std]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dev-dependencies.pallet-balances]
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dev-dependencies.sp-core]
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dev-dependencies.sp-io]
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[features]
+default = ['std']
+std = [
+    'codec/std',
+    'frame-support/std',
+    'frame-system/std',
+    'pallet-uniques/std',
+    'serde',
+    'sp-runtime/std',
+    'sp-std/std',
+]
+runtime-benchmarks = [
+	"frame-benchmarking",
+	"sp-runtime/runtime-benchmarks",
+	"frame-system/runtime-benchmarks",
+]

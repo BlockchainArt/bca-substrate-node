@@ -1,26 +1,28 @@
 [package]
-authors = ['Substrate DevHub <https://github.com/substrate-developer-hub>']
-description = 'Substrate FRAME based template for composing and building WASM runtimes.'
+authors = ['Blockchain.art']
 edition = '2018'
-homepage = 'https://substrate.dev'
+homepage = 'https://github.com/BlockchainArt/bca-substrate-node'
 license = 'Unlicense'
-name = 'node-template-runtime'
-publish = false
-repository = 'https://github.com/substrate-developer-hub/substrate-node-template/'
-version = '3.0.0-monthly-2021-08'
+name = 'bca-runtime'
+repository = 'https://github.com/BlockchainArt/bca-substrate-node'
+version = '3.0.0'
 
 [package.metadata.docs.rs]
 targets = ['x86_64-unknown-linux-gnu']
 
-[dependencies.pallet-template]
+[dependencies.pallet-uniques]
 default-features = false
-path = '../pallets/template'
-version = '3.0.0-monthly-2021-08'
+git = 'https://github.com/BlockchainArt/substrate'
+branch = 'bca'
+
+[dependencies.pallet-bca]
+default-features = false
+path = '../pallets/bca'
+version = '1.0.0'
 
 [build-dependencies.substrate-wasm-builder]
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '5.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.codec]
 default-features = false
@@ -30,41 +32,35 @@ version = '2.0.0'
 
 [dependencies.frame-benchmarking]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
 optional = true
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.frame-executive]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.frame-support]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.frame-system]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.frame-system-benchmarking]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
 optional = true
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.frame-system-rpc-runtime-api]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.hex-literal]
 optional = true
@@ -72,117 +68,103 @@ version = '0.3.1'
 
 [dependencies.pallet-aura]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-balances]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-grandpa]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-randomness-collective-flip]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-sudo]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-timestamp]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-transaction-payment]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.pallet-transaction-payment-rpc-runtime-api]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
+
+[dependencies.pallet-utility]
+default-features = false
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-api]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-block-builder]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-consensus-aura]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '0.10.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-core]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-inherents]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-offchain]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-runtime]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-session]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-std]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-transaction-pool]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [dependencies.sp-version]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-08'
-version = '4.0.0-dev'
+git = 'https://github.com/BlockchainArt/substrate.git'
+branch = 'bca'
 
 [features]
 default = ['std']
@@ -193,11 +175,12 @@ runtime-benchmarks = [
     'frame-system/runtime-benchmarks',
     'hex-literal',
     'pallet-balances/runtime-benchmarks',
-    'pallet-template/runtime-benchmarks',
+    'pallet-bca/runtime-benchmarks',
     'pallet-timestamp/runtime-benchmarks',
     'sp-runtime/runtime-benchmarks',
 ]
 std = [
+    'pallet-bca/std',
     'codec/std',
     'frame-executive/std',
     'frame-support/std',
@@ -206,12 +189,11 @@ std = [
     'pallet-aura/std',
     'pallet-balances/std',
     'pallet-grandpa/std',
-    'pallet-randomness-collective-flip/std',
     'pallet-sudo/std',
-    'pallet-template/std',
     'pallet-timestamp/std',
     'pallet-transaction-payment-rpc-runtime-api/std',
     'pallet-transaction-payment/std',
+    'pallet-utility/std',
     'sp-api/std',
     'sp-block-builder/std',
     'sp-consensus-aura/std',
