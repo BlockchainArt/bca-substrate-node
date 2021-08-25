@@ -153,10 +153,16 @@ pub mod pallet {
             origin: OriginFor<T>,
             metadata: Vec<u8>,
             edition: Edition,
+            artist: Vec<u8>,
+            year: u8,
+            name: Vec<u8>,
         ) -> DispatchResult {
             let who = ensure_signed(origin)?;
 
             let collection_id = Self::do_create_collection(&who, &metadata, edition)?;
+            T::NFT::set_typed_class_attribute(&collection_id, b"artist", &artist)?;
+            T::NFT::set_typed_class_attribute(&collection_id, b"year", &year)?;
+            T::NFT::set_typed_class_attribute(&collection_id, b"name", &name)?;
 
             Self::deposit_event(Event::CollectionCreated(who, collection_id));
             Ok(())

@@ -19,7 +19,10 @@ fn minting() {
             Edition {
                 proofs: 1,
                 prints: 3
-            }
+            },
+            Default::default(),
+            0,
+            Default::default(),
         ));
         assert_eq!(2, NextCollectionId::<Test>::get());
         assert_eq!(1, Collections::<Test>::get::<Vec<u8>>(Default::default()));
@@ -99,7 +102,10 @@ fn transfer() {
             Edition {
                 proofs: 1,
                 prints: 3
-            }
+            },
+            Default::default(),
+            0,
+            Default::default(),
         ));
         assert_ok!(Bca::create_print(Origin::signed(1), 1, false, 1));
         assert_ok!(Bca::transfer_print(Origin::signed(1), 1, 1, 2));
@@ -116,7 +122,10 @@ fn collection_unavailable() {
             Edition {
                 proofs: 1,
                 prints: 3
-            }
+            },
+            Default::default(),
+            0,
+            Default::default(),
         ));
         assert_noop!(
             Bca::create_collection(
@@ -125,7 +134,10 @@ fn collection_unavailable() {
                 Edition {
                     proofs: 1,
                     prints: 3
-                }
+                },
+                Default::default(),
+                0,
+                Default::default(),
             ),
             Error::<Test>::CollectionUnavailable
         );
@@ -141,7 +153,10 @@ fn collection_not_found() {
             Edition {
                 proofs: 1,
                 prints: 3
-            }
+            },
+            Default::default(),
+            0,
+            Default::default(),
         ));
         // collection doesn't exist
         assert_noop!(
@@ -165,7 +180,10 @@ fn print_unavailable() {
             Edition {
                 proofs: 0,
                 prints: 0
-            }
+            },
+            Default::default(),
+            0,
+            Default::default(),
         ));
         assert_noop!(
             Bca::create_print(Origin::signed(1), 1, false, 1),

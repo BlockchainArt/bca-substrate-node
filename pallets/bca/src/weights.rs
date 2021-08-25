@@ -44,11 +44,11 @@ impl<T: frame_system::Config> WeightInfo for Weights<T> {
 	// Storage: Bca NextCollectionId (r:1 w:1)
 	// Storage: Uniques Class (r:1 w:1)
 	// Storage: Uniques ClassMetadataOf (r:1 w:0)
-	// Storage: Uniques Attribute (r:1 w:1)
-	fn create_collection() -> Weight {
-		(228_411_000 as Weight)
-			.saturating_add(T::DbWeight::get().reads(5 as Weight))
-			.saturating_add(T::DbWeight::get().writes(4 as Weight))
+	// Storage: Uniques Attribute (r:4 w:4)
+	fn create_collection(_s: u32, ) -> Weight {
+		(371_111_000 as Weight)
+			.saturating_add(T::DbWeight::get().reads(8 as Weight))
+			.saturating_add(T::DbWeight::get().writes(7 as Weight))
 	}
 	// Storage: Uniques Class (r:1 w:1)
 	// Storage: Uniques Attribute (r:2 w:2)
@@ -57,7 +57,7 @@ impl<T: frame_system::Config> WeightInfo for Weights<T> {
 	// Storage: Uniques ClassMetadataOf (r:1 w:0)
 	// Storage: Uniques Account (r:0 w:1)
 	fn create_print() -> Weight {
-		(355_773_000 as Weight)
+		(307_332_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(6 as Weight))
 			.saturating_add(T::DbWeight::get().writes(5 as Weight))
 	}
@@ -65,7 +65,7 @@ impl<T: frame_system::Config> WeightInfo for Weights<T> {
 	// Storage: Uniques Class (r:1 w:0)
 	// Storage: Uniques Account (r:0 w:2)
 	fn transfer_print() -> Weight {
-		(135_412_000 as Weight)
+		(121_842_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
